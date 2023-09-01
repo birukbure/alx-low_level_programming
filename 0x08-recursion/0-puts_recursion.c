@@ -1,13 +1,22 @@
-#include "main.h"
+/*
+ * File: 0-puts_recursion.c
+ * Auth: Brennan D Baraban
+ */
+
+#include "holberton.h"
 
 /**
- * _puts_recursion - Prints a string followed by a new line using recursion.
- * @s: The input string to be printed.
+ * _puts_recursion - Prints a string, followed by a new line.
+ * @s: The string to be printed.
  */
 void _puts_recursion(char *s)
 {
-    if (*s == '\0')
-    {
-        _putchar('\n'); /* Print a new line when the end of the string is reached. */
-        return;
-    }
+	if (*s)
+	{
+		_putchar(*s);
+		_puts_recursion(s + 1);
+	}
+
+	else
+		_putchar('\n');
+}
